@@ -1,10 +1,10 @@
 {
   "name"            : "redistub",
-  "version"         : "1.1.0",
+  "version"         : "1.1.1",
   "description"     : "Stateless Redis API stub for testing controllers.",
   "main"            : "lib/redistub.js",
   "dependencies"    : {
-    "ramda"       : "^0.18.x"
+    "ramda"       : "^0.19.x"
   },
   "devDependencies" : {
     "coveralls" : "^2.11.2",
