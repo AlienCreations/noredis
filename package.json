@@ -1,34 +1,31 @@
 {
-  "name"            : "redistub",
-  "version"         : "1.1.1",
-  "description"     : "Stateless Redis API stub for testing controllers.",
-  "main"            : "lib/redistub.js",
-  "dependencies"    : {
-    "ramda"       : "^0.19.x"
+  "name": "redistub",
+  "version": "2.0.0",
+  "description": "Stateless Redis API stub for testing controllers.",
+  "main": "lib/redistub.js",
+  "dependencies": {},
+  "devDependencies": {
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.13",
+    "jasmine": "^2.3.1"
   },
-  "devDependencies" : {
-    "coveralls" : "^2.11.2",
-    "istanbul"  : "^0.3.13",
-    "jasmine"   : "^2.3.1"
+  "scripts": {
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/jasmine"
   },
-  "scripts"         : {
-    "test" : "./node_modules/.bin/istanbul cover ./node_modules/.bin/jasmine"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aliencreations/redistub.git"
   },
-  "repository"      : {
-    "type" : "git",
-    "url"  : "https://github.com/aliencreations/redistub.git"
-  },
-  "keywords"        : [
+  "keywords": [
     "aliencreations",
     "redis",
     "util",
-    "node",
-    "ramda"
+    "node"
   ],
-  "author"          : "Sean Cannon",
-  "license"         : "MIT",
-  "bugs"            : {
-    "url" : "https://github.com/aliencreations/redistub/issues"
+  "author": "Sean Cannon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aliencreations/redistub/issues"
   },
-  "homepage"        : "https://github.com/aliencreations/redistub"
+  "homepage": "https://github.com/aliencreations/redistub"
 }

@@ -1,34 +1,33 @@
 'use strict';
 
-var R        = require('ramda'),
-    redistub = require('../lib/redistub');
+const redistub = require('../lib/redistub');
 
-var redisClient = redistub.createClient();
+const redisClient = redistub.createClient();
 
-var _callback;
+let _callback;
 
-describe('set', function() {
+describe('set', () => {
 
-  beforeEach(function() {
+  beforeEach(() => {
     _callback = jasmine.createSpy('callback');
   });
 
-  it('invokes a provided callback with expected results when given a string value', function() {
+  it('invokes a provided callback with expected results when given a string value', () => {
     redisClient.set('foo', 'bar', _callback);
     expect(_callback).toHaveBeenCalledWith(null, 'OK');
   });
 
-  it('invokes a provided callback with expected results when given a number', function() {
+  it('invokes a provided callback with expected results when given a number', () => {
     redisClient.set('foo', 123, _callback);
     expect(_callback).toHaveBeenCalledWith(null, 'OK');
   });
 
-  it('invokes a provided callback with expected results when given a boolean', function() {
+  it('invokes a provided callback with expected results when given a boolean', () => {
     redisClient.set('foo', true, _callback);
     expect(_callback).toHaveBeenCalledWith(null, 'OK');
   });
 
-  it('invokes a provided callback with expected results when given an object', function() {
+  it('invokes a provided callback with expected results when given an object', () => {
     redisClient.set('foo', {a : 1}, _callback);
     expect(_callback).toHaveBeenCalledWith(null, 'OK');
   });

@@ -1,32 +1,31 @@
 'use strict';
 
-var R        = require('ramda'),
-    redistub = require('../lib/redistub');
+const redistub = require('../lib/redistub');
 
-var redisClient, isClientMethod;
+let redisClient, isClientMethod;
 
-describe('createClient', function() {
+describe('createClient', () => {
 
-  beforeEach(function() {
+  beforeEach(() => {
     redisClient    = redistub.createClient();
-    isClientMethod = R.compose(R.is(Function), R.prop(R.__, redisClient));
+    isClientMethod = k => typeof redisClient[k] === 'function';
   });
 
-  describe('returns a stubbed out Redis API which', function() {
+  describe('returns a stubbed out Redis API which', () => {
 
-    it('contains an expire method', function() {
+    it('contains an expire method', () => {
       expect(isClientMethod('expire')).toBe(true);
     });
 
-    it('contains a get method', function() {
+    it('contains a get method', () => {
       expect(isClientMethod('get')).toBe(true);
     });
 
-    it('contains a set method', function() {
+    it('contains a set method', () => {
       expect(isClientMethod('set')).toBe(true);
     });
 
-    it('contains a del method', function() {
+    it('contains a del method', () => {
       expect(isClientMethod('del')).toBe(true);
     });
 
