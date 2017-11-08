@@ -1,6 +1,6 @@
 {
   "name": "redistub",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Stateless Redis API stub for testing controllers.",
   "main": "lib/redistub.js",
   "dependencies": {},
