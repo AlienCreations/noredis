@@ -29,5 +29,9 @@ describe('createClient', () => {
       expect(isClientMethod('del')).toBe(true);
     });
 
+    it('contains an auth method', () => {
+      expect(isClientMethod('auth')).toBe(true);
+    });
+
   });
 });
