@@ -45,6 +45,22 @@ redisClient.get('someCacheKey', function(err, val) {
 
 ```
 
+#### createClient -> mget
+Normally used to get an array of items from the Redis store, this method will always
+return `null` for both `err` and `val`
+
+```js
+
+var redis       = require('redistub'),
+    redisClient = redis.createClient();
+
+redisClient.mget(['someCacheKey', 'someOtherCacheKey'], function(err, val) {
+  // err will always be null
+  // val will always be null
+});
+
+```
+
 #### createClient -> set
 Normally used to set an item in the Redis store, this
 method will always return `null` for `err` and `OK` for `res`
